@@ -1,0 +1,8 @@
+secrets.txt
+secret_folder
+.idea
+__pycache__
+venv
+env
+.pytest_cache
+.coverage
