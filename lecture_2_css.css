@@ -184,6 +184,7 @@ p {
     top: 400px;
 }
 
+
 .my-list li:nth-child(odd) {
     background-color: red;
     color: white;
