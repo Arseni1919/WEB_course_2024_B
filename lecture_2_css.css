@@ -18,7 +18,7 @@ body {
     /*background-color: #acac78;*/
     /*background-color: rgb(191, 232, 232);*/
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("/pics/bg2.jpg");
+    /*background-image: url("/pics/bg2.jpg");*/
     /*background-position: center center;*/
     /*background-position: 100px 200px;*/
     background-size: 100%;
@@ -193,4 +193,23 @@ p {
     color: black;
 }
 
+@media (max-width: 800px) {
+    body {
+        background-color: red;
+        color: white;
+    }
+    .colored-font {
+    color: black;
+}
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: black;
+        color: white;
+    }
+    .colored-font {
+    color: yellow;
+}
+}
 
