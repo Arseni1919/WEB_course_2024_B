@@ -1,0 +1,13 @@
+.error {
+    background-color: yellow;
+    color: red;
+    border: 1px solid red;
+}
+
+.msg {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+}
