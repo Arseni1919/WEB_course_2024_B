@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+
+{% include('header.html') %}
+
+{% block main %}{% endblock %}
+
+{% include('footer.html') %}
+</body>
+</html>
