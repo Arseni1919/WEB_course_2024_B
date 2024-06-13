@@ -9,7 +9,13 @@ Main Page
 {#{% set x = 'y' %}#}
 
 {% if name %}
-    <h1>Welcome, {{ name | default(default_name, true) | upper }}!</h1>
+{#    <h1>Welcome, {{ name | default(default_name, true) | upper }}!</h1>#}
+    {% if session.get('logged_in') %}
+        <h1>Welcome, {{ session.get('username') }}!</h1>
+    {% else %}
+        <h1>Welcome, stranger!</h1>
+    {% endif %}
+
     <h2>My Hobbies</h2>
     <ul>
         {% for hobby in hobbies %}
@@ -33,6 +39,7 @@ Main Page
 {% else %}
     <h1>Please, register first!</h1>
 {% endif %}
+    {{ super() }}
 
 <h2 class="{% if redcolor %} red {% else %} green {% endif %}">This is a H2 tag!</h2>
 

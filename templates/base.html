@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="../static/index.css">
+{#    <link rel="stylesheet" href="../static/index.css">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
 
 {% include('header.html') %}
 
-{% block main %}{% endblock %}
+{% block main %}
+<h2>THIS IS TEXT INSIDE A BLOCK</h2>
+{% endblock %}
 
 {% include('footer.html') %}
 </body>
