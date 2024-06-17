@@ -1,3 +1,7 @@
 <header>
-    <a href="/">HOME</a> | <a href="/about">ABOUT</a> | {% if session.get('logged_in') %}<a href="/logout">LOGOUT</a>{% else %}<a href="/login">LOGIN</a>{% endif %}
+    <a href="/">HOME</a>
+    | <a href="/about">ABOUT</a>
+    | {% if session.get('logged_in') %}<a href="/logout">LOGOUT</a>{% else %}<a href="/login">LOGIN</a>{% endif %}
+    | <a href="/mongodb">MongoDB</a>
+    | <a href="/fetch_page">Fetch Page</a>
 </header>
