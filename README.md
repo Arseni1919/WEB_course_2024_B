@@ -14,5 +14,9 @@ THis is a regular text.
 1. item
 1. item
 
+```python
+print('Hi!')
+```
+
 ![](pics/bird.png)
 
