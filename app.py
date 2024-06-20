@@ -209,10 +209,12 @@ customers_col = mydatabase['customers']
 def mongodb_func():
     # message = 'good'
     # message = pymongo.version
-    # sample_analytics_db = cluster['sample_analytics']
-    # message = sample_analytics_db.list_collection_names()
+    # sample_analytics = cluster['sample_analytics']
+    # message = sample_analytics.list_collection_names()
+    # message = mydatabase.list_collection_names()
     # message = cluster.list_database_names()
     # message = mydatabase.list_collection_names()
+    # products = mydatabase['products']
 
     # insert_one
     # my_dict = {
@@ -246,10 +248,12 @@ def mongodb_func():
     # sort
     # my_list = list(customers_col.find().sort('name'))
     # my_list = list(customers_col.find().sort('name', -1))
+    # message = len(list(customers_col.find()))
 
     # limit
     # message = len(list(customers_col.find()))
-    # my_list = list(customers_col.find().limit(3))
+    # myquery = {'rating': {"$lt": 50}}
+    # my_list = list(customers_col.find(myquery).sort('rating', -1).limit(3))
     # my_list = list(customers_col.find().sort('rating', -1).limit(3))
 
     # findOne
@@ -271,26 +275,26 @@ def mongodb_func():
     # my_list = list(customers_col.find())
 
     # delete many
-    # customers_col.delete_many({'rating': {'$gt': 0}})
+    # customers_col.delete_many({'rating': {'$gt': 1000}})
     # my_list = list(customers_col.find())
 
     # aggregations
-    # aggregation = [
-    #     {
-    #         '$match': {
-    #             'rating': {
-    #                 '$gt': 0
-    #             }
-    #         }
-    #     }, {
-    #         '$sort': {
-    #             'rating': 1
-    #         }
-    #     }, {
-    #         '$limit': 2
-    #     }
-    # ]
-    # my_list = list(customers_col.aggregate(aggregation))
+#     aggregation = [
+#     {
+#         '$match': {
+#             'rating': {
+#                 '$gt': 10
+#             }
+#         }
+#     }, {
+#         '$sort': {
+#             'name': -1
+#         }
+#     }, {
+#         '$limit': 4
+#     }
+# ]
+#     my_list = list(customers_col.aggregate(aggregation))
 
     my_list = customers_col.find()
     # return render_template('mongodb_lecture.html', message=message)
