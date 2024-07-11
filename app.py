@@ -118,17 +118,27 @@ def login_func():
 #
 #
 # @app.route('/users', defaults={'user_id': 123})
-# @app.route('/users/<int:user_id>')
-# def users_id_func(user_id):
-#     # DB ...
-#     return render_template('users.html', user_id=user_id)
-#
-#
-# @app.route('/<category>/<int:cat_id>/<subcategory>/name')
-# def foo_func(category, cat_id, subcategory):
-#     return f'{category=}, {cat_id=}, {subcategory=}'
-#
-#
+
+@app.route('/users')
+def users_func():
+    # if len(request.args) > 0:
+    users_id = request.args['user_id']
+    return redirect(f'/users/{users_id}')
+    # return render_template('users.html')
+
+
+@app.route('/users/', defaults={'user_id': 123})
+@app.route('/users/<int:user_id>')
+def users_id_func(user_id):
+    # DB ...
+    return render_template('users.html', user_id=user_id)
+
+
+@app.route('/<category>/<int:cat_id>/<subcategory>/name')
+def foo_func(category, cat_id, subcategory):
+    return f'{category=}, {cat_id=}, {subcategory=}'
+
+
 # @app.route('/api/users/<int:user_id>')
 # def api_users(user_id):
 #     # DB ...
@@ -347,6 +357,7 @@ def fetch_example_func():
     if request.method == 'POST':
         mydict = request.json
         print(type(mydict))
+        print(mydict)
         data = {'message': 'POST response'}
         data.update(mydict)
         return json.dumps(data)
