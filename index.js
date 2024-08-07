@@ -1,1 +1,3 @@
-fkdlgj
+const foo = () => {
+
+}
